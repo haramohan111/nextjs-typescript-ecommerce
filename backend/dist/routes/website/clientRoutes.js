@@ -1,0 +1,27 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const homeContainer_1 = require("../../controller/frontend/homeContainer");
+const cartController_1 = require("../../controller/cartController");
+const router = express_1.default.Router();
+router.get('/homesearch', (req, res, next) => (0, homeContainer_1.homeSearch)(req, res, next));
+router.get('/slider', (req, res, next) => (0, homeContainer_1.slider)(req, res, next));
+router.get('/productcategoryslider', (req, res, next) => (0, homeContainer_1.productCategorySlider)(req, res, next));
+router.get('/dealoftheday', (req, res, next) => (0, homeContainer_1.dealofday)(req, res, next));
+router.get('/manageproductformen', (req, res, next) => (0, homeContainer_1.manageProductsForMen)(req, res, next));
+router.get('/manageproductforwomenmen', (req, res, next) => (0, homeContainer_1.manageProductsForWomen)(req, res, next));
+router.get('/todayfav', (req, res, next) => (0, homeContainer_1.todayfav)(req, res, next));
+router.get('/productcontainer', (req, res, next) => (0, homeContainer_1.productContainer)(req, res, next));
+router.get('/gridlistproducts', (req, res, next) => (0, homeContainer_1.gridListProduct)(req, res, next));
+router.post('/updatecartuserid', (req, res, next) => (0, cartController_1.updateCartUserId)(req, res, next));
+router.get('/getclientorders', (req, res, next) => (0, homeContainer_1.getClientOrders)(req, res, next));
+router.post('/addwishlist', (req, res, next) => (0, homeContainer_1.addToWishlist)(req, res, next));
+router.get('/fetchwishlist', (req, res, next) => (0, homeContainer_1.fetchWishList)(req, res, next));
+router.get('/deletecartbasedonproductid/:id', (req, res, next) => (0, homeContainer_1.deleteCartBasedonproductId)(req, res, next));
+router.get('/manageproductsforkids', (req, res, next) => (0, homeContainer_1.manageProductsForKids)(req, res, next));
+router.get('/manageproductsforbeauty', (req, res, next) => (0, homeContainer_1.manageProductsForBeauty)(req, res, next));
+router.get('/manageproductsforwatch', (req, res, next) => (0, homeContainer_1.manageProductsForWatch)(req, res, next));
+exports.default = router;

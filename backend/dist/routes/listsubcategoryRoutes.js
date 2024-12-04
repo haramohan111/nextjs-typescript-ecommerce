@@ -1,0 +1,20 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const listsubcategoryController_1 = require("../controller/listsubcategoryController");
+const router = express_1.default.Router();
+router.post('/addlistsubcategory', (req, res, next) => (0, listsubcategoryController_1.addlistSubcategory)(req, res, next));
+router.get('/managesubcategory', (req, res, next) => (0, listsubcategoryController_1.managelistSubcategory)(req, res, next));
+router.get('/listsubcategorypagination', (req, res, next) => (0, listsubcategoryController_1.listsubcategoryPagination)(req, res, next));
+router.post('/deletealllistsubcategory', (req, res, next) => (0, listsubcategoryController_1.deleteallListSubcategory)(req, res, next));
+router.post('/importexcellistsubcategory', (req, res, next) => (0, listsubcategoryController_1.addexcelListSubCategory)(req, res, next));
+router.put('/activelistsubcategory', (req, res, next) => (0, listsubcategoryController_1.activelistsubCategory)(req, res, next));
+router.delete('/deletelistsubcategory/:id', (req, res, next) => (0, listsubcategoryController_1.deletelistsubCategory)(req, res, next));
+router.get('/editlistsubcategory/:id', (req, res, next) => (0, listsubcategoryController_1.editlistSubCategory)(req, res, next));
+//router.get('/listsubcategorybyid/:id', (req: Request, res: Response, next: NextFunction) => ListsubcategorybyID(req, res, next));
+router.put('/updatelistsubcategory', (req, res, next) => (0, listsubcategoryController_1.updateListSubCategory)(req, res, next));
+router.get('/getlistsubcategorybyid/:id', (req, res, next) => (0, listsubcategoryController_1.ListsubcategorybyID)(req, res, next));
+exports.default = router;
